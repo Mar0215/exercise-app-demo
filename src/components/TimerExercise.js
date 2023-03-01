@@ -8,7 +8,7 @@ export default function TimerExercise(props) {
     let ReturnToMenu = () => {props.setMenuScreen()}
 
     function changeTime(event) {
-        setTime(parseInt(event.target.value));
+        setTime(parseInt(event.target.value) * 60);
     }
 
     useEffect(() => {
@@ -26,8 +26,8 @@ export default function TimerExercise(props) {
     return (
         <div>
             <h2>{props.exercise.name}</h2>
-            <p>How many seconds do you want to hold this plank?</p>
-            <input type="number" min="0" value={time} onChange={changeTime} />
+            <p>How many minutes do you want to hold this plank?</p>
+            <input type="number" min="0" value={time / 60} onChange={changeTime} />
 
             <br></br>
             <br></br>
